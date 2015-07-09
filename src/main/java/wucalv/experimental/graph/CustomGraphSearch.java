@@ -7,17 +7,17 @@ import com.gs.collections.impl.factory.Sets;
  * User: wucalv
  * Date: 7/5/15 11:43 AM
  */
-public class KCGGraphSearch extends DepthFirstSearch<String> {
+public class CustomGraphSearch extends DepthFirstSearch<String> {
 
     private static final int MAX_VOWEL_COUNT = 2;
 
     private ImmutableSet<String> VOWELS = Sets.immutable.of("A", "E", "I", "O", "U");
 
-    public KCGGraphSearch(Graph<String> graph, int maxVertexVisits) {
+    public CustomGraphSearch(Graph<String> graph, int maxVertexVisits) {
         super(graph, maxVertexVisits);
     }
 
-    public KCGGraphSearch(Graph<String> graph) {
+    public CustomGraphSearch(Graph<String> graph) {
         super(graph);
     }
 

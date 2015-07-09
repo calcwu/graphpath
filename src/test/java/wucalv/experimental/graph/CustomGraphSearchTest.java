@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
  * User: wucalv
  * Date: 7/5/15 12:01 PM
  */
-public class KCGGraphSearchTest {
+public class CustomGraphSearchTest {
 
     /***
      * Testing the following Graph
@@ -30,7 +30,7 @@ public class KCGGraphSearchTest {
         graph.addEdge("D", "A");
         graph.addEdge("D", "C");
 
-        KCGGraphSearch search = new KCGGraphSearch(graph, 3);
+        CustomGraphSearch search = new CustomGraphSearch(graph, 3);
         assertEquals(11, search.getPath("A"));
     }
 

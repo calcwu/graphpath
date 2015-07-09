@@ -13,7 +13,7 @@ public class GraphApplication extends Application<GraphAppConfiguration> {
     @Override
     public void initialize(Bootstrap<GraphAppConfiguration> bootstrap) {
         super.initialize(bootstrap);
-        bootstrap.addCommand(new KCGCommand("kcg", "Kcg code test"));
+        bootstrap.addCommand(new RunGraphCommand("kcg", "Kcg code test"));
     }
 
     @Override

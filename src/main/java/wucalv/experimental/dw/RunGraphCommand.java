@@ -7,7 +7,7 @@ import net.sourceforge.argparse4j.inf.Namespace;
 import net.sourceforge.argparse4j.inf.Subparser;
 import wucalv.experimental.graph.Graph;
 import wucalv.experimental.graph.GraphSearch;
-import wucalv.experimental.graph.KCGGraphSearch;
+import wucalv.experimental.graph.CustomGraphSearch;
 import wucalv.experimental.graph.KeyPad;
 import wucalv.experimental.graph.KeyPadBuilder;
 import wucalv.experimental.graph.KeyPadToGraphFunction;
@@ -16,9 +16,9 @@ import wucalv.experimental.graph.KeyPadToGraphFunction;
  * User: wucalv
  * Date: 7/5/15 5:04 PM
  */
-public class KCGCommand extends ConfiguredCommand<GraphAppConfiguration> {
+public class RunGraphCommand extends ConfiguredCommand<GraphAppConfiguration> {
 
-    protected KCGCommand(String name, String description) {
+    protected RunGraphCommand(String name, String description) {
         super(name, description);
     }
 
@@ -37,7 +37,7 @@ public class KCGCommand extends ConfiguredCommand<GraphAppConfiguration> {
         String n = namespace.get("n");
         KeyPad keyPad = KeyPadBuilder.buildDefault();
         Graph<String> graph = new KeyPadToGraphFunction().valueOf(keyPad);
-        GraphSearch<String> search = new KCGGraphSearch(graph, Integer.valueOf(n));
+        GraphSearch<String> search = new CustomGraphSearch(graph, Integer.valueOf(n));
         System.out.println(search.getPath("A"));
     }
 }
